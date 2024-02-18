@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSZONE Technologies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            color: white;
+            padding: 0%;
+            display: flex;
+            height: 16cm;
+        }
+        nav div {
+            padding: 0;
+            margin: 0%;
+            width: 15%;
+            background-color: rgb(85, 97, 85);
+        }
+        nav div a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em;
+            margin: 0 1em;
+            display: flex;
+            flex-direction: column;
+            height: 1cm;
+            justify-content: center;
+            align-items: center;
+        }
+        nav section{
+            width: 85%;
+            height: 14cm;
+        }
+
+        section {
+            padding: 2em;
+            color: #000000;
+        }
+
+        footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: absolute;
+            bottom: 0;
+            width: 97.87%;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                text-align: center;
+            }
+            nav a {
+                display: block;
+                margin: 0.5em 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SSZONE Technologies</h1>
+    </header>
+
+    <nav>
+        <div>
+            <a href="#" onclick="changePage('home')">Home</a>
+            <a href="#" onclick="changePage('about')">About</a>
+            <a href="#" onclick="changePage('services')">Services</a>
+            <a href="#" onclick="changePage('contact')">Contact</a>
+            <a href="#" id="changeColorBtn">Change Color</a>
+        </div>
+        <section id="content">
+            <h2>Welcome to SSZONE Technologies</h2>
+            <p>This is a simple website created using HTML, CSS, and JavaScript. It includes a header, navigation menu, content section, and footer. The webpage is designed to be responsive and works well on both desktop and mobile devices.</p>
+        </section>
+
+    </nav>
+        
+    <footer>
+        &copy; 2024 SSZONE Technologies. All rights reserved.
+    </footer>
+        
+
+    <footer>
+        &copy; 2024 SSZONE Technologies. All rights reserved.
+    </footer>
+
+    <script>
+       function changePage(page) {
+            var contentSection = document.getElementById('content');
+            switch (page) {
+                case 'home':
+                    contentSection.innerHTML = '<h2>Welcome to SSZONE Technologies</h2><p>This is the home page content.</p>';
+                    break;
+                case 'about':
+                    contentSection.innerHTML = '<h2>About Us</h2><p>Learn more about SSZONE Technologies.</p>';
+                    break;
+                case 'services':
+                    contentSection.innerHTML = '<h2>Our Services</h2><p>Explore the services offered by SSZONE Technologies.</p>';
+                    break;
+                case 'contact':
+                    contentSection.innerHTML = '<h2>Contact Us</h2><p>Get in touch with SSZONE Technologies.</p>';
+                    break;
+                default:
+                    break;
+            }
+        }
+        document.getElementById('changeColorBtn').addEventListener('click', function () {
+            var contentSection = document.querySelector('section');
+            contentSection.style.backgroundColor = getRandomColor();
+        });
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        
+    </script>
+
+</body>
+</html>
+
+</body>
+</html>
